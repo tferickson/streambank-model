@@ -184,6 +184,7 @@ for row = 1:size(input_table,1);
     
     %% Plot data up to now   
     if plt
+        % Monthly Q, H, bkf H
         fig=figure(row);
         fig.Color = 'w';
         suptitle(input_table.Properties.RowNames{row})
@@ -296,6 +297,7 @@ for row = 1:size(input_table,1);
             p2.YData = H_est(1:mnth-1);
             
             subplot(2,2,2)
+            % Monthly flow depth colored centerline
             axis equal
             hold on
             pcolor([x+B(row)/2*cos(n);x-B(row)/2*cos(n)],...
@@ -323,6 +325,7 @@ for row = 1:size(input_table,1);
             ax.YTick=[];
             
             subplot(2,2,3)
+            % Monthly velocity colored centerline
             hold on
             axis equal
             pcolor([x+B(row)/2*cos(n);x-B(row)/2*cos(n)],...
@@ -346,6 +349,7 @@ for row = 1:size(input_table,1);
 
             figure(row)
             subplot(2,2,4)
+            % Curvature, velocity, flow depth relationships
             p=plot(s,BR);
             p.Color=[0.6 0.6 0.6];
             hold on
